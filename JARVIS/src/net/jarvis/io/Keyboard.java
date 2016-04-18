@@ -1,4 +1,4 @@
-package net.jarvis.oi;
+package net.jarvis.io;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;

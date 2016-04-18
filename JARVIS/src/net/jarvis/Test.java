@@ -1,37 +1,38 @@
 package net.jarvis;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
-import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.TargetDataLine;
-import javax.swing.JFrame;
+import javax.swing.JFileChooser;
 
-import com.ibm.watson.developer_cloud.speech_to_text.v1.SpeechToText;
-import com.ibm.watson.developer_cloud.speech_to_text.v1.model.SpeechResults;
+import net.jarvis.commands.JTextToSpeech;
+import net.jarvis.io.Microphone;
+import net.jarvis.io.Speaker;
 
 
 public class Test {
 //	public static void main(String[] args)throws Exception {
-//		 ChatterBotFactory factory = new ChatterBotFactory();
-//
-//	        ChatterBot bot1 = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477");
-//	        ChatterBotSession bot1session = bot1.createSession();
-//
-////	        ChatterBot bot2 = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477");
-////	        ChatterBotSession bot2session = bot2.createSession();
-//	        Scanner scan = new Scanner(System.in);
-//	        while(true){
-//	        	String s = scan.nextLine();
-//	        	System.out.println(bot1session.think(s));
-//	        }
+//		JTextToSpeech test = new JTextToSpeech();
+////		ChatBot chatBot = new ChatBot();
+////	        Scanner scan = new Scanner(System.in);
+////	        while(true){
+////	        	String s = scan.nextLine();
+////	        	if(s.equals("new")){
+////	        		System.out.println("new Session");
+////	        		chatBot.newSession();
+////	        	}else{
+////	        		System.out.println(chatBot.tell(s));
+////	        	}
+////	        }
 //	}
 	/**
 	 * Copyright 2015 IBM Corp. All Rights Reserved.
@@ -51,38 +52,12 @@ public class Test {
 	/**
 	 * Recognize a sample wav file and print the transcript into the console output. Make sure you are
 	 * using UTF-8 to print messages; otherwise, you will see question marks.
+	 * @throws Exception 
 	 * @throws LineUnavailableException 
 	 */
 
-	  public static void main(String[] args) {
-
-		System.out.println("test");
-	    SpeechToText service = new SpeechToText();
-	    service.setUsernameAndPassword("36020111-18f4-4b43-9a10-62c7c5a29095", "QviJq5Awde4I");
-	    AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
-	    File audio = new File("test.wav");
-	    SpeechResults transcript = service.recognize(audio);
-
-	    System.out.println(transcript);
-//		  
-//			AudioFormat format = new AudioFormat(44100, 16, 1, true,false);
-//
-//			DataLine.Info targetInfo = new DataLine.Info(TargetDataLine.class, format);
-//			DataLine.Info sourceInfo = new DataLine.Info(SourceDataLine.class, format);
-//
-//			try {
-//				TargetDataLine targetLine = (TargetDataLine) AudioSystem.getLine(targetInfo);
-//				targetLine.open(format);
-//				targetLine.start();
-//				
-//				SourceDataLine sourceLine = (SourceDataLine) AudioSystem.getLine(sourceInfo);
-//				sourceLine.open(format);
-//				sourceLine.start();
-//
-//			}
-//			catch (Exception e) {
-//				System.err.println(e);
-//			}
+	  public static void main(String[] args) throws Exception {
+		  
 	  }
 	
 

@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWVidMode;
 
-import net.jarvis.oi.Keyboard;
+import net.jarvis.io.Keyboard;
 
 
 public class Main implements Runnable{
