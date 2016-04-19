@@ -22,5 +22,6 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/m10653/Downloads/lwjgl/native"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/m10653/git/JARVIS/JARVIS/assets/WolframAlphaJavaLibrary/WolframAlpha-1.1.jar" sourcepath="C:/Users/m10653/git/JARVIS/JARVIS/assets/WolframAlphaJavaLibrary/Source"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

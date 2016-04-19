@@ -14,7 +14,11 @@ import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.TargetDataLine;
 import javax.swing.JFileChooser;
 
+import com.skype.Skype;
+
+import net.jarvis.commands.JSpeechToText;
 import net.jarvis.commands.JTextToSpeech;
+import net.jarvis.commands.SkypeHandler;
 import net.jarvis.io.Microphone;
 import net.jarvis.io.Speaker;
 
@@ -57,6 +61,19 @@ public class Test {
 	 */
 
 	  public static void main(String[] args) throws Exception {
+		  Microphone mic = new Microphone("mic");
+		  JSpeechToText thing = new JSpeechToText();
+		  Scanner scan = new Scanner(System.in);
+		  while(true){
+			  String input = scan.nextLine();
+			  if(input.equals("1")){
+				  mic.start();
+			  }else{
+				  System.out.println(thing.toText(mic.stop()));
+//				  Skype.chat(thing.toText(mic.stop())).send("This is a Test");
+			  }
+			  
+		  }
 		  
 	  }
 	
