@@ -15,7 +15,7 @@ public class JSpeechToText {
 	public String toText(File file){
 		String transcript = stt.recognize(file).toString();
 		System.out.println(transcript);
-		return null;
+		return transcript;
 	}
 
 }

@@ -12,8 +12,8 @@ public class ChatBot  {
 	
 	public ChatBot() throws Exception {
 		factory = new ChatterBotFactory();
-//		bot = factory.create(ChatterBotType.CLEVERBOT);
-		bot = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477"); //TODO add support for Diff bots.
+		bot = factory.create(ChatterBotType.CLEVERBOT);
+//		bot = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477"); //TODO add support for Diff bots.
 		
 		 botsession= bot.createSession();
 		 

@@ -46,9 +46,9 @@ public class Main implements Runnable{
 	}
 	public void update(){
 		glfwPollEvents();
-		if (Keyboard.keys[GLFW_KEY_SPACE]){
-			System.out.println("Space");
-		}
+//		if (Keyboard.keys[GLFW_KEY_SPACE]){
+//			System.out.println("Space");
+//		}
 	}
 	public void render(){
 		glfwSwapBuffers(window);

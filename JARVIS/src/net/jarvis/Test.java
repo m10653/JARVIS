@@ -1,26 +1,9 @@
 package net.jarvis;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
-import javax.sound.sampled.AudioFileFormat;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.SourceDataLine;
-import javax.sound.sampled.TargetDataLine;
-import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 
-import com.skype.Skype;
-
-import net.jarvis.commands.JSpeechToText;
-import net.jarvis.commands.JTextToSpeech;
-import net.jarvis.commands.SkypeHandler;
-import net.jarvis.io.Microphone;
-import net.jarvis.io.Speaker;
+import net.jarvis.io.Keyboard;
 
 
 public class Test {
@@ -61,19 +44,25 @@ public class Test {
 	 */
 
 	  public static void main(String[] args) throws Exception {
-		  Microphone mic = new Microphone("mic");
-		  JSpeechToText thing = new JSpeechToText();
-		  Scanner scan = new Scanner(System.in);
-		  while(true){
-			  String input = scan.nextLine();
-			  if(input.equals("1")){
-				  mic.start();
-			  }else{
-				  System.out.println(thing.toText(mic.stop()));
-//				  Skype.chat(thing.toText(mic.stop())).send("This is a Test");
-			  }
-			  
-		  }
+		  
+		  
+		  Jarvis ai = new Jarvis();
+//		  Microphone mic = new Microphone("mic");
+//		  JSpeechToText thing = new JSpeechToText();
+//		  JTextToSpeech tts = new JTextToSpeech("tts");
+//		  Speaker speaker = new Speaker();
+//		  speaker.play(tts.say("Input interpretation\n------------\nEmma Watson  (actor, etc.)\nBasic information\n------------\nfull name | Emma Charlotte Duerre Watson\ndate of birth | Sunday, April 15, 1990 (age: 26 years)\nplace of birth | Paris, Ile?de?France, France\n"));		  
+//		  Scanner scan = new Scanner(System.in);
+//		  while(true){
+//			  String input = scan.nextLine();
+//			  if(input.equals("1")){
+//				  mic.start();
+//			  }else{
+//				  System.out.println(thing.toText(mic.stop()));
+////				  Skype.chat(thing.toText(mic.stop())).send("This is a Test");
+//			  }
+//			  
+//		  }
 		  
 	  }
 	

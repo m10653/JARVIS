@@ -1,3 +1,4 @@
+package net.jarvis.commands;
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;
 import com.wolfram.alpha.WAPlainText;
@@ -45,7 +46,7 @@ public class AlphaAPISample {
     public static void main(String[] args) {
 
         // Use "pi" as the default query, or caller can supply it as the lone command-line argument.
-        String input = "pi";
+        String input = "emma wattson";
         if (false)
             input = args[0];
         

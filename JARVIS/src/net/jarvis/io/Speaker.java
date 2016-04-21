@@ -16,12 +16,14 @@ public class Speaker {
 	
 	public Speaker(){
 	}
-	public void play(File file) throws InterruptedException{
+	public synchronized void play(File file) throws InterruptedException{
 		try {
 			stream = AudioSystem.getAudioInputStream(file);
 			clip = AudioSystem.getClip();
 			clip.open(stream);
 			clip.start();
+			stream.close();
+			System.gc(); //here becuse of java bug;
 		} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
 			e.printStackTrace();
 			System.out.println("Error in Speaker Class");

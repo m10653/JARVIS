@@ -14,7 +14,8 @@ import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 public class JTextToSpeech {
 	private TextToSpeech tts;
 	private File speech;
-	private Voice voice = Voice.EN_LISA;
+	private Voice voice = new Voice("en-US_MichaelVoice", "male", "en-US");;
+	
 	
 	public JTextToSpeech(String fileName) throws IOException{
 		tts = new TextToSpeech();
@@ -24,12 +25,16 @@ public class JTextToSpeech {
 		speech.deleteOnExit();
 		
 	}
+	public JTextToSpeech(String fileame, Voice voice) throws IOException{
+		this(fileame);
+		this.voice = voice;
+	}
 	public File say(String text) throws Exception{
 		InputStream in = tts.synthesize(text, voice, HttpMediaType.AUDIO_WAV);
-		InputStream fixed = WaveUtils.reWriteWaveHeader(in);
+		in = WaveUtils.reWriteWaveHeader(in);
 		
-		Files.copy(fixed,speech.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		
+		Files.copy(in,speech.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		in.close();
 		return speech;
 		
 	}

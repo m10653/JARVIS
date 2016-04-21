@@ -1,14 +1,24 @@
 package net.jarvis.io;
 
-import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFWKeyCallback;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Keyboard  extends GLFWKeyCallback{
+public class Keyboard implements KeyListener{
 
-	public static boolean[] keys = new boolean [65536];
 	@Override
-	public void invoke(long window, int key, int scancode, int action, int mods) {
-		keys[key] = action != GLFW.GLFW_RELEASE;
+	public void keyPressed(KeyEvent event) {}
+
+	@Override
+	public void keyReleased(KeyEvent event) {
+		System.out.println("Released");
+		if(event.getKeyCode() == KeyEvent.VK_SPACE){
+			System.out.println("Space");
+		}
+		
 	}
 
+	@Override
+	public void keyTyped(KeyEvent event) {}
+		
+	
 }
